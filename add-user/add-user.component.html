@@ -1,0 +1,111 @@
+<p>add-user works!</p>
+
+<form #userForm="ngForm" (ngSubmit)="addUser(userForm)" #loginForm="ngForm">
+
+    First name:
+    <input type="text" name="firstname" [(ngModel)]="user.firstname" #firstname="ngModel" required />
+    <br/>
+    <div *ngIf="firstname.invalid && loginForm.submitted">
+        <p style="color: red;">Please Enter First Name...</p>
+    </div>
+    <br/>
+
+    Last name:
+    <input type="text" name="lastname" [(ngModel)]="user.lastname" #lastname="ngModel" required />
+    <br/>
+    <div *ngIf="lastname.invalid && loginForm.submitted">
+        <p style="color: red;">Please Enter Last Name...</p>
+    </div>
+    <br/>
+
+    Date of Birth:
+    <input type="date" name="dateOfBirth" [(ngModel)]="user.dateOfBirth" #dateOfBirth="ngModel" required />
+    <br/>
+    <div *ngIf="dateOfBirth.invalid && loginForm.submitted">
+        <p style="color: red;">Please Enter Date of Birth...</p>
+    </div>
+    <br/>
+
+    Gender:
+    <select name="gender" [(ngModel)]="user.gender" #gender="ngModel" required>
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+    </select>
+    <br/>
+    <div *ngIf="gender.invalid && loginForm.submitted">
+        <p style="color: red;">Please Select Gender...</p>
+    </div>
+    <br/>
+
+    Contact Number:
+    <input type="tel" name="contactNumber" [(ngModel)]="user.contactNumber" #contactNumber="ngModel" required />
+    <br/>
+    <div *ngIf="contactNumber.invalid && loginForm.submitted">
+        <p style="color: red;">Please Enter Contact Number...</p>
+    </div>
+    <br/>
+
+    Address:
+    <input type="text" name="address" [(ngModel)]="user.address" #address="ngModel" required />
+    <br/>
+    <div *ngIf="address.invalid && loginForm.submitted">
+        <p style="color: red;">Please Enter Address...</p>
+    </div>
+    <br/>
+
+    City:
+    <input type="text" name="city" [(ngModel)]="user.city" #city="ngModel" required />
+    <br/>
+    <div *ngIf="city.invalid && loginForm.submitted">
+        <p style="color: red;">Please Enter City...</p>
+    </div>
+    <br/>
+
+    State:
+    <input type="text" name="state" [(ngModel)]="user.state" #state="ngModel" required />
+    <br/>
+    <div *ngIf="state.invalid && loginForm.submitted">
+        <p style="color: red;">Please Enter State...</p>
+    </div>
+    <br/>
+
+    Username:
+    <input type="text" name="username" [(ngModel)]="user.username" #cusUsername="ngModel" required />
+    <br/>
+    <div *ngIf="cusUsername.invalid && loginForm.submitted">
+        <p style="color: red;">Please Enter User Name...</p>
+    </div>
+    <br/>
+
+    Email ID:
+    <input type="email" name="emailid" [(ngModel)]="user.emailid" #emailid="ngModel" required />
+    <br/>
+    <div *ngIf="emailid.invalid && loginForm.submitted">
+        <p style="color: red;">Please Enter a Valid Email ID...</p>
+    </div>
+    <br/>
+
+    Password:
+    <input type="password" name="password" [(ngModel)]="login.password" #password="ngModel" required />
+    <br/>
+    <div *ngIf="password.invalid && loginForm.submitted">
+        <p style="color: red;">Please Enter Password...</p>
+    </div>
+    <br/>
+
+    Role:
+    <select name="role" [(ngModel)]="login.role" #role="ngModel" required>
+        <option value="">Select Role</option>
+        <option value="Customer">Customer</option>
+        <option value="BankManager">Bank Manager</option>
+    </select>
+    <br/>
+    <div *ngIf="role.invalid && loginForm.submitted">
+        <p style="color: red;">Please Select Role...</p>
+    </div>
+    <br/>
+
+    <button type="submit" value="submit" [disabled]="userForm.invalid">Submit</button>
+</form>
